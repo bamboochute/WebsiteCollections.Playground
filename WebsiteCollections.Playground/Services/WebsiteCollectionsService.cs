@@ -16,7 +16,7 @@ namespace WebsiteCollections.Playground.Services
 
         public async Task AddWebsiteAsync(WebsiteModel website)
         {
-            _logger.LogInformation("Adding website {@Website}", website);
+            _logger.LogDebug("Adding website: {@Website}", website);
             try
             {
                 await _repository.AddWebsite(website);
@@ -30,7 +30,7 @@ namespace WebsiteCollections.Playground.Services
 
         public async Task<IEnumerable<WebsiteModel>> GetWebsiteCollectionAsync(string collection)
         {
-            _logger.LogInformation("Getting website collection {Collection}", collection);
+            _logger.LogDebug("Getting website collection: {Collection}", collection);
             try
             {
                 return await _repository.GetWebsiteCollection(collection);
@@ -44,7 +44,7 @@ namespace WebsiteCollections.Playground.Services
 
         public async Task<IEnumerable<WebsiteModel>> GetAllWebsiteCollectionsAsync()
         {
-            _logger.LogInformation("Getting all website collections");
+            _logger.LogDebug("Getting all website collections");
             try
             {
                 return await _repository.GetAllWebsiteCollections();

@@ -19,7 +19,7 @@ namespace WebsiteCollections.Playground.Repositories
             try
             {
                 await _websiteCollection.InsertOneAsync(website);
-                _logger.LogInformation("Website added to the {Collection} collection", website.Collection);
+                _logger.LogDebug("Website added to the {Collection} collection", website.Collection);
             }
             catch (MongoException ex)
             {
@@ -30,7 +30,7 @@ namespace WebsiteCollections.Playground.Repositories
 
         public async Task<IEnumerable<WebsiteModel>> GetAllWebsiteCollections()
         {
-            _logger.LogInformation("Retrieving all collections");
+            _logger.LogDebug("Retrieving all collections");
             try
             {
                 return await _websiteCollection.Find(website => true).ToListAsync();
@@ -44,7 +44,7 @@ namespace WebsiteCollections.Playground.Repositories
 
         public async Task<IEnumerable<WebsiteModel>> GetWebsiteCollection(string collection)
         {
-            _logger.LogInformation("Retrieving the {Collection} collection", collection);
+            _logger.LogDebug("Retrieving the {Collection} collection", collection);
             try
             {
                 return await _websiteCollection.Find(website => website.Collection == collection).ToListAsync();

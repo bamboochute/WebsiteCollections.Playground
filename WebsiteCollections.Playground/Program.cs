@@ -7,6 +7,8 @@ using WebsiteCollections.Playground.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.AddServiceDefaults();
+
 builder.Services.AddOpenApi();
 
 // Read MongoDB settings from configuration
@@ -18,6 +20,7 @@ var collectionName = builder.Configuration.GetValue<string>("MongoDbSettings:Col
 var mongoClient = new MongoClient(connectionString);
 var database = mongoClient.GetDatabase(databaseName);
 var websiteCollection = database.GetCollection<WebsiteModel>(collectionName);
+
 
 // Register the MongoDB collection, repository, and service
 builder.Services.AddSingleton<IMongoCollection<WebsiteModel>>(websiteCollection);
@@ -35,6 +38,8 @@ builder.Services
 
 var app = builder.Build();
 
+app.MapDefaultEndpoints();
+
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
@@ -43,6 +48,6 @@ if (app.Environment.IsDevelopment())
 
 app.MapWebsiteCollectionsEndpoints();
 
-app.MapHealthChecks("/health");
+//app.MapHealthChecks("/health");
 
 app.Run();

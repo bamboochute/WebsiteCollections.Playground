@@ -13,6 +13,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		WebsiteCollections.Playground\WebsiteCollections.Playground.http = WebsiteCollections.Playground\WebsiteCollections.Playground.http
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebsiteCollections.Playground.AppHost", "WebsiteCollections.Playground.AppHost\WebsiteCollections.Playground.AppHost.csproj", "{15A0E37B-6DAC-47AD-A7DA-5A5573BACD61}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebsiteCollections.Playground.ServiceDefaults", "WebsiteCollections.Playground.ServiceDefaults\WebsiteCollections.Playground.ServiceDefaults.csproj", "{7B678D61-636B-1607-7A7E-54E586D0BEDE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{81DDED9D-158B-E303-5F62-77A2896D2A5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{81DDED9D-158B-E303-5F62-77A2896D2A5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{81DDED9D-158B-E303-5F62-77A2896D2A5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15A0E37B-6DAC-47AD-A7DA-5A5573BACD61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15A0E37B-6DAC-47AD-A7DA-5A5573BACD61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15A0E37B-6DAC-47AD-A7DA-5A5573BACD61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15A0E37B-6DAC-47AD-A7DA-5A5573BACD61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B678D61-636B-1607-7A7E-54E586D0BEDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B678D61-636B-1607-7A7E-54E586D0BEDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B678D61-636B-1607-7A7E-54E586D0BEDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B678D61-636B-1607-7A7E-54E586D0BEDE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

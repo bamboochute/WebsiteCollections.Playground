@@ -20,7 +20,7 @@ namespace WebsiteCollections.Playground.Endpoints
 
         private static async Task<IResult> AddWebsiteAsync(WebsiteDto dto, IWebsiteCollectionsService service, ILogger<Program> logger)
         {
-            logger.LogInformation("POST - Adding website to collection {Collection} with title {Title}", dto.Collection, dto.Title);
+            logger.LogInformation("POST - Adding website to collection: \"{Collection}\" with title: \"{Title}\"", dto.Collection, dto.Title);
             if (!Uri.IsWellFormedUriString(dto.Url, UriKind.Absolute))
             {
                 return Results.BadRequest("The URL provided is not valid");
@@ -51,7 +51,7 @@ namespace WebsiteCollections.Playground.Endpoints
 
         private static async Task<IResult> GetCollectionAsync(string collection, IWebsiteCollectionsService service, ILogger<Program> logger)
         {
-            logger.LogInformation("GET - Retrieving website collection {Collection}", collection);
+            logger.LogInformation("GET - Retrieving website collection: \"{Collection}\"", collection);
             var websiteCollections = await service.GetWebsiteCollectionAsync(collection);
             return Results.Ok(websiteCollections);
         }
