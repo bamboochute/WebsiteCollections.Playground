@@ -21,9 +21,14 @@ namespace WebsiteCollections.Playground.Repositories
                 await _websiteCollection.InsertOneAsync(website);
                 _logger.LogDebug("Website added to the {Collection} collection", website.Collection);
             }
+            catch (MongoWriteException ex)
+            {
+                _logger.LogError(ex, "Error adding website - Duplicate website URL: {URL}", website.Url);
+                throw;
+            }
             catch (MongoException ex)
             {
-                _logger.LogError(ex, "Error while adding website to the {Collection} collection", website.Collection);
+                _logger.LogError(ex, "MongoException - Error while retrieving all collections");
                 throw;
             }
         }

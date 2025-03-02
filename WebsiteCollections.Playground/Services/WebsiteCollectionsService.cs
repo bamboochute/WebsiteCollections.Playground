@@ -16,42 +16,39 @@ namespace WebsiteCollections.Playground.Services
 
         public async Task AddWebsiteAsync(WebsiteModel website)
         {
-            _logger.LogDebug("Adding website: {@Website}", website);
+            _logger.LogDebug("Service - Adding website: {@Website}", website);
             try
             {
                 await _repository.AddWebsite(website);
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Error while adding website {@Website}", website);
                 throw;
             }
         }
 
         public async Task<IEnumerable<WebsiteModel>> GetWebsiteCollectionAsync(string collection)
         {
-            _logger.LogDebug("Getting website collection: {Collection}", collection);
+            _logger.LogDebug("Service - Getting website collection: {Collection}", collection);
             try
             {
                 return await _repository.GetWebsiteCollection(collection);
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Error while retrieving collection {collection}", collection);
                 throw;
             }
         }
 
         public async Task<IEnumerable<WebsiteModel>> GetAllWebsiteCollectionsAsync()
         {
-            _logger.LogDebug("Getting all website collections");
+            _logger.LogDebug("Service - Getting all website collections");
             try
             {
                 return await _repository.GetAllWebsiteCollections();
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Error while retrieving all collections");
                 throw;
             }
         }
